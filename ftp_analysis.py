@@ -112,6 +112,7 @@ print(df_holiday.describe())
 # 上班時段
 df_work_day = df_am.append(df_pm)
 df_work_day.describe()
+df_work_day.to_csv('df_workday.csv',index=True)
 
 print('===========上班時段===========')
 print(df_work_day.describe())
@@ -216,6 +217,9 @@ log_data = pd.read_csv("./new_data_upload.csv")
 # +
 df = pd.DataFrame(log_data)
 
+print('子丑寅卯')
+print(df.describe())
+
 dayOfWeek = []
 
 for d in df.date:
@@ -263,6 +267,7 @@ print(df_holiday.describe())
 # 上班時段
 df_work_day = df_am.append(df_pm)
 df_work_day.describe()
+df_work_day.to_csv('df_workday_upload.csv',index=True)
 
 print('===========上班時段===========')
 print(df_work_day.describe())
@@ -270,7 +275,7 @@ print(df_work_day.describe())
 
 fliter = (df_work_day.upload >= 537.436500)
 df_work_busy = df_work_day[fliter]
-df_work_busy.to_csv('df_work_busy_upload.csv',index=False)
+df_work_busy.to_csv('df_work_busy_upload.csv',index=True)
 
 print('{}'.format('================================================='))
 count = str(len(df_work_busy))
