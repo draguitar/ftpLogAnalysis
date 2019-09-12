@@ -61,6 +61,9 @@ log_data = pd.read_csv("./new_data_download.csv")
 # +
 df = pd.DataFrame(log_data)
 
+print('{}{}'.format('所有資料 => \n',df.describe()))
+print(df.quantile(.1))
+
 dayOfWeek = []
 
 for d in df.date:
